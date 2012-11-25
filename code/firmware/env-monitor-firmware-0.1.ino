@@ -1,3 +1,6 @@
+//Authors: Daniel Atkinson
+//Version: 0.1
+
 //Imports
 #include <stdio.h>
 #include <string.h>
@@ -46,7 +49,7 @@ void collect_data(){
 
 //possibly have this as a boolean which requires a response from the recording software
 void post_data(){
-	// Letter  determings what data is coming, ":" means data follows, "," means end of current data, "#" means end of current stream
-	message = "T:" + temperature_reading + ",L:" + light_reading + ",M:" + motion_reading + "#";
+	// Letter  determings what data is coming, ":" means data follows, "," means end of current data, "\n" means end of current stream
+	message = "T:" + temperature_reading + ",L:" + light_reading + ",M:" + motion_reading + "\n";
 	Serial.write(message);
 }
